@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 :root {
-    --position: 50;
     --hue: 0;
     --saturation: 50%;
     --background-color: hsl(var(--hue),var(--saturation),20%);
@@ -12,6 +11,7 @@
 }
 body {
     background-color: var(--background-color);
+    overflow: hidden;
 }
 .score {
     margin-top: 10px;
@@ -42,6 +42,7 @@ body {
     left: calc(100% + .5rem - 1px);
 }
 .paddle {
+    --position: 50;
     position: absolute;
     width: 1vh;
     height: 10vh;
@@ -55,7 +56,6 @@ body {
 }
 .paddle.left {
     left: 1vw;
-    
 }
 .paddle.right {
     right: 1vw;
@@ -68,8 +68,8 @@ body {
     background: var(--paddle-background);
     border-radius: 50%;
     position: absolute;
-    top: calc(var(--x) * 1vh);
-    left: calc(var(--y) * 1vw);
+    top: calc(var(--y) * 1vh);
+    left: calc(var(--x) * 1vw);
     transform: translate(-50%,-50%);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
